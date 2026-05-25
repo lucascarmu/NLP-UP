@@ -41,8 +41,8 @@ interactiva y comparar ambos enfoques lado a lado.
 
 ```bash
 # 1. Clonar el repositorio
-git clone <URL-del-repo>
-cd <carpeta-del-repo>
+git clone https://github.com/lucascarmu/NLP-UP.git
+cd NLP-UP
 
 # 2. Crear y activar un entorno virtual
 python -m venv .venv
