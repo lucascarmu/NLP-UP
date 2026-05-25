@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Caches y embeddings precomputados (se regeneran)
+.cache/
+*.npy
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Archivos temporales de Office (se generan al abrir el .docx)
+~$*
+
+# Sistema operativo
+.DS_Store
+
+# Editores / IDEs
+.vscode/
+.idea/
+
+# Claude
+CLAUDE.md
