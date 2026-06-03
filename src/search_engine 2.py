@@ -15,21 +15,17 @@ from sentence_transformers import SentenceTransformer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
+MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 TEXT_COLS = ["title", "overview", "genres", "keywords", "cast"]
 RESULT_COLS = ["title", "release_year", "vote_average", "genres", "cast", "directors", "overview"]
 
 
 def build_search_text(row: pd.Series) -> str:
     """Representación textual enriquecida usada como entrada de ambos enfoques."""
-    try:
-        kw = str(ast.literal_eval(row['keywords'])[:8])
-    except (ValueError, SyntaxError):
-        kw = row['keywords']
     return (
         f"Title: {row['title']}. "
         f"Genres: {row['genres']}. "
-        f"Keywords: {kw}. "
+        f"Keywords: {row['keywords']}. "
         f"Cast: {row['cast']}. "
         f"Overview: {row['overview']}."
     )
@@ -68,7 +64,7 @@ class MovieSearchEngine:
         )
         self.tfidf_matrix = self.tfidf_vectorizer.fit_transform(texts)
 
-        # Enfoque semántico: embeddings densos (768 dimensiones)
+        # Enfoque semántico: embeddings densos (384 dimensiones)
         self.model = SentenceTransformer(model_name)
         self.embeddings = self.model.encode(texts, convert_to_numpy=True)
 

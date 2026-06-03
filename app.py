@@ -85,7 +85,7 @@ with st.sidebar:
 
     st.divider()
     st.caption(
-        "Modelo: all-MiniLM-L6-v2 (optimizado para inglés). "
+        "Modelo: all-mpnet-base-v2 (optimizado para inglés, 512 tokens). "
         "Dataset: 1000 películas de TMDB (simulado vía CSV)."
     )
 

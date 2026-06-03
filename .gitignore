@@ -28,3 +28,4 @@ env/
 
 # Claude
 CLAUDE.md
+.claude/
