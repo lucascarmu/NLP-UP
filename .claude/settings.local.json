@@ -4,7 +4,8 @@
       "Bash(python3 -c \"import docx; print\\('python-docx OK', docx.__version__\\)\")",
       "Bash(python3 patch_conclusion.py)",
       "Bash(python3 patch_csv_path.py)",
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "Bash(pip show *)"
     ]
   }
 }
